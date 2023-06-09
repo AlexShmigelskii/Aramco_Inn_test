@@ -1,3 +1,6 @@
 [theme]
-base="dark"
-primaryColor="purple"
+primaryColor = "#540B0E"
+backgroundColor = "#1F1A24"
+secondaryBackgroundColor = "#6930C3"
+textColor = "#E0E5E9"
+font = "sans serif"
