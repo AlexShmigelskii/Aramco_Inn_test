@@ -68,7 +68,7 @@ def main():
                 'LogTransform',
                 help='Transforms data by applying a logarithm'
                 ):
-            """LogTransform checkbox"""
+            # LogTransform checkbox
             log = LogTransform(in_column="target")
             transforms.append(log)
 
@@ -77,7 +77,7 @@ def main():
                 help='Transforms data by subtracting the current value from the previous one. This is typically done to'
                      ' remove a time dependency in the data, making it stationary.'
                 ):
-            """DifferencingTransform checkbox"""
+            # DifferencingTransform checkbox
             period = st.sidebar.slider('choose period for differencing', 1, 24, value=8)
             dif = DifferencingTransform(in_column="target", period=period)
             transforms.append(dif)
@@ -86,7 +86,7 @@ def main():
                 'Select Horizon',
                 help='forecast length in months'
                 ):
-            """Selecting the horizon of prediction"""
+            # Selecting the horizon of prediction
             HORIZON = st.sidebar.slider('horizon of prediction', 1, 24, value=8, help='num of months to predict')
 
         start_lag, end_lag = st.sidebar.select_slider(
