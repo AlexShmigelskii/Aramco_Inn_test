@@ -8,6 +8,7 @@ from etna.pipeline import Pipeline
 from etna.transforms import LagTransform, LogTransform, DifferencingTransform
 from etna.models import CatBoostPerSegmentModel
 from etna.metrics import MAE, MSE, SMAPE
+import wandb
 
 
 def main():
@@ -35,6 +36,7 @@ def main():
         Enjoy the application and find it useful in your forecasting tasks!
         """)
 
+
     def load_data():
         # Loading dataset
         # original_df = pd.read_csv('https://raw.githubusercontent.com/demidovakatya/mashinnoye-obucheniye/master/5-data'
@@ -55,6 +57,7 @@ def main():
         st.write(original_df)
         return original_df, ts
 
+
     def sidebar():
         # Input widjects
         st.sidebar.header('Input features')
@@ -68,7 +71,7 @@ def main():
                 'LogTransform',
                 help='Transforms data by applying a logarithm'
                 ):
-            """LogTransform checkbox"""
+            # LogTransform checkbox
             log = LogTransform(in_column="target")
             transforms.append(log)
 
@@ -77,7 +80,7 @@ def main():
                 help='Transforms data by subtracting the current value from the previous one. This is typically done to'
                      ' remove a time dependency in the data, making it stationary.'
                 ):
-            """DifferencingTransform checkbox"""
+            # DifferencingTransform checkbox
             period = st.sidebar.slider('choose period for differencing', 1, 24, value=8)
             dif = DifferencingTransform(in_column="target", period=period)
             transforms.append(dif)
@@ -86,7 +89,7 @@ def main():
                 'Select Horizon',
                 help='forecast length in months'
                 ):
-            """Selecting the horizon of prediction"""
+            # Selecting the horizon of prediction
             HORIZON = st.sidebar.slider('horizon of prediction', 1, 24, value=8, help='num of months to predict')
 
         start_lag, end_lag = st.sidebar.select_slider(
@@ -98,6 +101,7 @@ def main():
         transforms.append(lags)
 
         return HORIZON, transforms
+
 
     def data_split(horizon):
         # Data split
@@ -112,6 +116,7 @@ def main():
             test_end=last_month.strftime('%Y-%m-%d'),
         )
         return train_ts, test_ts
+
 
     def plot():
         st.pyplot(plot_residuals(forecast_df=forecast_df, ts=ts))
@@ -168,3 +173,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
