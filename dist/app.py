@@ -59,7 +59,7 @@ def main():
     def sidebar():
         # Input widjects
         st.sidebar.header('Input features')
-        st.sidebar.text('you can select the parameters \n - the graph data will change')
+        st.sidebar.text('You can select the parameters\n the graph data will be changed')
 
         # Creating checkbox for transforms
         transforms = []
