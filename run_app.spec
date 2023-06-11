@@ -8,7 +8,11 @@ a = Analysis(
     ['run_app.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[
+        ("data/monthly-australian-wine-sales.csv", "monthly-australian-wine-sales.csv"),
+        ("venv/lib/python3.10/site-packages/streamlit/static", "/streamlit/static"),
+        ("venv/lib/python3.10/site-packages/streamlit/runtime", "/streamlit/runtime"),
+    ],
     hiddenimports=[],
     hookspath=['./hooks'],
     hooksconfig={},

@@ -8,7 +8,6 @@ from etna.pipeline import Pipeline
 from etna.transforms import LagTransform, LogTransform, DifferencingTransform
 from etna.models import CatBoostPerSegmentModel
 from etna.metrics import MAE, MSE, SMAPE
-import wandb
 
 
 def main():
@@ -41,7 +40,7 @@ def main():
         # Loading dataset
         # original_df = pd.read_csv('https://raw.githubusercontent.com/demidovakatya/mashinnoye-obucheniye/master/5-data'
         #                           '-analysis-applications/1_1_time_series/monthly-australian-wine-sales.csv')
-        original_df = pd.read_csv("data/monthly-australian-wine-sales.csv")
+        original_df = pd.read_csv("dist/data/monthly-australian-wine-sales.csv")
 
         original_df["timestamp"] = pd.to_datetime(original_df["month"])
         original_df["target"] = original_df["sales"]
