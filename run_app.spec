@@ -9,9 +9,9 @@ a = Analysis(
     pathex=[],
     binaries=[],
     datas=[
+        ('venv/Lib/site-packages/pytorch_lightning/version.info', 'pytorch_lightning'),
         ("data/monthly-australian-wine-sales.csv", "monthly-australian-wine-sales.csv"),
-        ("venv/lib/python3.10/site-packages/streamlit/static", "/streamlit/static"),
-        ("venv/lib/python3.10/site-packages/streamlit/runtime", "/streamlit/runtime"),
+        ('venv/Lib/site-packages/lightning_fabric/version.info', 'lightning_fabric')
     ],
     hiddenimports=[],
     hookspath=['./hooks'],
