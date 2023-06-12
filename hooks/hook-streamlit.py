@@ -4,6 +4,9 @@ hiddenimports = []
 binaries = []
 datas = []
 
+data = copy_metadata('streamlit')
+
+datas += data
 
 data, binary, hiddenimport = collect_all('streamlit')
 
@@ -23,11 +26,11 @@ hiddenimports += hiddenimport
 binaries += binary
 datas += data
 
-data, binary, hiddenimport = collect_all('pandas')
-
-hiddenimports += hiddenimport
-binaries += binary
-datas += data
+# data, binary, hiddenimport = collect_all('pandas')
+#
+# hiddenimports += hiddenimport
+# binaries += binary
+# datas += data
 
 # data, binary, hiddenimport = collect_all('etna.etna.pipeline')
 #

@@ -1,4 +1,4 @@
-# -*- mode: python ; coding: utf-8 -*- сработал для убунту
+# -*- mode: python ; coding: utf-8 -*- сработало для винды
 
 
 block_cipher = None
@@ -9,9 +9,9 @@ a = Analysis(
     pathex=[],
     binaries=[],
     datas=[
+        ('venv/Lib/site-packages/pytorch_lightning/version.info', 'pytorch_lightning'),
         ("data/monthly-australian-wine-sales.csv", "monthly-australian-wine-sales.csv"),
-        ("venv/Lib/site-packages/streamlit/static", "/streamlit/static"),
-        ("venv/Lib/site-packages/streamlit/runtime", "/streamlit/runtime"),
+        ('venv/Lib/site-packages/lightning_fabric/version.info', 'lightning_fabric')
     ],
     hiddenimports=[],
     hookspath=['./hooks'],
