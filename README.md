@@ -1,3 +1,6 @@
+![Image alt](https://github.com/AlexShmigelskii/Aramco_Inn_test/raw/master/result.png)
+
+
 To build the .exe app , follow the instructions listed below:
 
 ! before you start, make sure you have python version >=3.9 installed !
