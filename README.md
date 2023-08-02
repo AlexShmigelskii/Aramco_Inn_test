@@ -18,6 +18,7 @@ You are expected to address the following points in your solution:
 
 ![Image alt](https://github.com/AlexShmigelskii/Aramco_Inn_test/raw/master/result.png)
 
+## Building the app
 
 To build the .exe app , follow the instructions listed below:
 
