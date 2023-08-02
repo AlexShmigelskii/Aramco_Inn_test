@@ -1,3 +1,21 @@
+# Streamlit time series forecast application
+
+## Task
+
+Your task is to pack [Streamlit](https://streamlit.io) ML application into working executable .exe file.
+
+## Requirements
+
+You are expected to address the following points in your solution:
+
+1. Get familiar with [ETNA](https://github.com/tinkoff-ai/etna) time-series library and concept of time-series back-testing.
+2. Use [CatBoostPerSegment](https://etna-docs.netlify.app/api/etna.models.catboost.catboostpersegmentmodel#etna.models.catboost.CatBoostPerSegmentModel) and [pipeline](https://etna-docs.netlify.app/api/etna.pipeline.pipeline.pipeline#etna.pipeline.pipeline.Pipeline) to build and validate your forecasting model. You basically may use code from [Get Started](https://github.com/tinkoff-ai/etna#get-started) of the library. 
+3. Build very simple Streamlit offline web-app where user can train and validate model. Make user able to choose ETNA transforms of his choice (just a few of them) via Streamlit API.
+4. Visualize the results of model backtest and forecasts in the app.
+5. Pack it into excecutable`.exe` installer using pyinstaller. Install the app on your machine and test it. It must work.
+6. The executable offline application is required to utilize the CatBoostPerSegment and the pipeline from the ETNA library and to visualize forecasts. This .msi installer should open a window in a web browser where the CatBoost model within the pipeline is executed. Connection to the internet is not allowed.
+7. Provide a concise ReadMe.txt with instructions how to build the standalone app. The instruction should have the steps required to go through in order to build the `.exe` that can be executed offline by final user. The solution must be reproducible.
+
 ![Image alt](https://github.com/AlexShmigelskii/Aramco_Inn_test/raw/master/result.png)
 
 
